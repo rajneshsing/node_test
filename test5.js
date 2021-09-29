@@ -49,7 +49,7 @@ console.log(err.stack);
 
 console.log("You've successfully created Node1.txt");*/
 
-const fs = require('fs');
+/*const fs = require('fs');
 //let data='';
 async function print(readable) {
   readable.setEncoding('utf8');
@@ -60,6 +60,14 @@ async function print(readable) {
  return data;
 }
 
-const ress=print(fs.createReadStream('test.txt')).then((value)=> { console.log(value) }).catch(console.error);
+const ress=print(fs.createReadStream('test.txt')).then((value)=> { console.log(value) }).catch(console.error);*/
 
 
+var fs = require("fs");  
+// Create a readable stream  
+var readerStream = fs.createReadStream('test.txt');  
+// Create a writable stream  
+var writerStream = fs.createWriteStream('output.txt');  
+// Pipe the read and write operations  
+// read input.txt and write data to output.txt  
+readerStream.pipe(writerStream);  
